@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, useTheme } from "@mui/material";
+import { Box, IconButton, Stack, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { tokens } from "../../theme";
 import ScreenHeader from "../shared/ScreenHeader";
@@ -42,14 +42,15 @@ const Team = () => {
       flex: 1,
       renderCell: ({ row: { access } }) => {
         return (
-          <Stack
-            direction={"row"}
-            spacing={6}
+          <IconButton
+            disableRipple
             sx={{
-              width: "60%",
+              width: {
+                xs: "100%",
+                lg: "60%",
+              },
               m: "0 auto",
               p: "5px",
-
               backgroundColor:
                 access === "admin"
                   ? colors.redAccent[600]
@@ -62,12 +63,13 @@ const Team = () => {
             {access === "admin" && <AdminPanelSettingsTwoTone />}
             {access === "manager" && <PersonPinIcon />}
             {access === "user" && <EmojiPeopleIcon />}
-            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
-              {access}
-            </Typography>
-          </Stack>
+          </IconButton>
         );
       },
+    },
+    {
+      field: "access",
+      headerName: "Access Level",
     },
   ];
 
