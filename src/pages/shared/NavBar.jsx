@@ -7,6 +7,7 @@ import {
   TextField,
   InputAdornment,
 } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import { ColorModeContext, tokens } from "../../theme";
 import {
@@ -22,12 +23,11 @@ const NavBar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
+  const screenisNotXs = useMediaQuery((theme) => theme.breakpoints.up("sm"));
   return (
     <AppBar
       position="static"
       sx={{
-        // backgroundColor: `${colors.primary[400]}`,
-
         backgroundColor: "inherit",
         flexGrow: 1,
       }}
@@ -46,13 +46,15 @@ const NavBar = () => {
             style: { color: `${colors.primary[100]} ` },
           }}
           InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton disabled={true}>
-                  <Search />
-                </IconButton>
-              </InputAdornment>
-            ),
+            ...(screenisNotXs && {
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton disabled={true}>
+                    <Search />
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }),
           }}
         />
 
@@ -61,7 +63,6 @@ const NavBar = () => {
           direction={"row"}
           spacing={2}
           style={{ justifyContent: "flex-end" }}
-        
         >
           <IconButton onClick={colorMode.toggleColorMode}>
             {theme.palette.mode === "dark" ? <LightMode /> : <DarkMode />}
