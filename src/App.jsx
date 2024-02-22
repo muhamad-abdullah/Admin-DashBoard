@@ -1,4 +1,3 @@
-import "./App.css";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 
 import MainRouter from "./pages/shared/Router";
@@ -9,10 +8,12 @@ function App() {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <div className="app">
-          <CssBaseline />
-          <MainRouter />
-        </div>
+        <main className="content">
+          <div className="app">
+            <CssBaseline />
+            <MainRouter />
+          </div>
+        </main>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
