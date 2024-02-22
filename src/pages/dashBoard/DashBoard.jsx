@@ -32,7 +32,10 @@ const DashBoard = () => {
   return (
     <Stack spacing={0.5}>
       <Box
-        display={"flex"}
+        display={{
+          xs: "block",
+          lg: "flex",
+        }}
         justifyContent={"space-between"}
         alignItems={"center"}
       >
@@ -47,6 +50,10 @@ const DashBoard = () => {
             fontSize: "14px",
             fontWeight: "bold",
             padding: "10px 20px",
+            width: {
+              xs: "100%",
+              lg: "auto",
+            },
           }}
         >
           <DownloadOutlinedIcon sx={{ mr: "10px" }} />
@@ -63,7 +70,11 @@ const DashBoard = () => {
       >
         {/* ROW 1 */}
         <Box
-          gridColumn="span 3"
+          gridColumn={{
+            xs: "span 12",
+            lg: "span 3",
+            xl: "span 3",
+          }}
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
@@ -82,7 +93,11 @@ const DashBoard = () => {
           />
         </Box>
         <Box
-          gridColumn="span 3"
+          gridColumn={{
+            xs: "span 12",
+            lg: "span 3",
+            xl: "span 3",
+          }}
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
@@ -101,7 +116,11 @@ const DashBoard = () => {
           />
         </Box>
         <Box
-          gridColumn="span 3"
+          gridColumn={{
+            xs: "span 12",
+            lg: "span 3",
+            xl: "span 3",
+          }}
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
@@ -120,7 +139,11 @@ const DashBoard = () => {
           />
         </Box>
         <Box
-          gridColumn="span 3"
+          gridColumn={{
+            xs: "span 12",
+            lg: "span 3",
+            xl: "span 3",
+          }}
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
@@ -141,7 +164,11 @@ const DashBoard = () => {
 
         {/* ROW 2 */}
         <Box
-          gridColumn="span 8"
+          // gridColumn="span 8"
+          gridColumn={{
+            xs: "span 12",
+            lg: "span 8",
+          }}
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -181,7 +208,11 @@ const DashBoard = () => {
           </Box>
         </Box>
         <Box
-          gridColumn="span 4"
+          // gridColumn="span 4"
+          gridColumn={{
+            xs: "span 12",
+            lg: "span 4",
+          }}
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           overflow="auto"
@@ -233,7 +264,10 @@ const DashBoard = () => {
 
         {/* ROW 3 */}
         <Box
-          gridColumn="span 4"
+          gridColumn={{
+            xs: "span 12",
+            lg: "span 4",
+          }}
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           p="30px"
@@ -259,7 +293,10 @@ const DashBoard = () => {
           </Box>
         </Box>
         <Box
-          gridColumn="span 4"
+          gridColumn={{
+            xs: "span 12",
+            lg: "span 4",
+          }}
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -275,7 +312,10 @@ const DashBoard = () => {
           </Box>
         </Box>
         <Box
-          gridColumn="span 4"
+          gridColumn={{
+            xs: "span 12",
+            lg: "span 4",
+          }}
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           padding="30px"
